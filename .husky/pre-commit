@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+pnpm exec lint-staged
+if pnpm run | grep -q -E '^\s*test\s'; then
+  pnpm test
+else
+  echo "[pre-commit] no test script, skipping"
+fi
