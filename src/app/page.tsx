@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"></div>
+    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+      <p className="text-h2">안녕</p>
+    </div>
   );
 }
