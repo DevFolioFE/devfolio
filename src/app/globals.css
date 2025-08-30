@@ -11,6 +11,35 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
+  /* Primary */
+  --color-primary: #0d80f2;
+
+  /* Secondary Palette */
+  --color-secondary-1: #ffa32b;
+  --color-secondary-2: #48d1ff;
+  --color-secondary-3: #36ff76;
+  --color-secondary-4: #344fff;
+  --color-secondary-5: #823aff;
+  --color-secondary-6: #d036ff;
+  --color-secondary-7: #ff31a2;
+  --color-secondary-8: #f47f25;
+  --color-secondary-9: #ff2f2f;
+  --color-secondary-10: #ffe93f;
+  --color-secondary-11: #44ff6d;
+
+  /* Shadow Palette (Secondary 색상에 투명도 18%) */
+  --color-shadow-1: rgba(255, 163, 43, 0.18); /* from #FFA32B */
+  --color-shadow-2: rgba(72, 209, 255, 0.18); /* from #48D1FF */
+  --color-shadow-3: rgba(54, 255, 118, 0.18); /* from #36FF76 */
+  --color-shadow-4: rgba(52, 79, 255, 0.18); /* from #344FFF */
+  --color-shadow-5: rgba(130, 58, 255, 0.18); /* from #823AFF */
+  --color-shadow-6: rgba(208, 54, 255, 0.18); /* from #D036FF */
+  --color-shadow-7: rgba(255, 49, 162, 0.18); /* from #FF31A2 */
+  --color-shadow-8: rgba(244, 127, 37, 0.18); /* from #F47F25 */
+  --color-shadow-9: rgba(255, 47, 47, 0.18); /* from #FF2F2F */
+  --color-shadow-10: rgba(255, 233, 63, 0.18); /* from #FFE93F */
+  --color-shadow-11: rgba(68, 255, 109, 0.18); /* from #44FF6D */
+
   /* Typography tokens */
   --text-display: 48px;
   --leading-display: 60px;
