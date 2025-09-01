@@ -39,6 +39,9 @@
   --color-shadow-10: rgba(255, 233, 63, 0.18); /* from #FFE93F */
   --color-shadow-11: rgba(68, 255, 109, 0.18); /* from #44FF6D */
 
+  /* Border Color */
+  --color-border: #e5e8ea;
+
   /* Typography tokens */
   --text-display: 48px;
   --leading-display: 60px;

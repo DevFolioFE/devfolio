@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔨 빌드 체크 중..."
+pnpm build
+
+if [ $? -eq 0 ]; then
+    echo "build success"
+    exit 0
+else
+    echo "build fail"
+    echo "Please fix the build errors and try again."
+    exit 1
+fi 
