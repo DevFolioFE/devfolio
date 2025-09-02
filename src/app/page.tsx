@@ -1,4 +1,4 @@
-import { LinkPreview } from "@/features/home";
+import { LinkPreview } from "@/features/home/ui";
 import TestSvg from "@/assets/icons/test_preview.svg";
 
 export default function Home() {
