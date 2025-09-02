@@ -11,8 +11,8 @@ import { Login } from "./Login";
  */
 
 export function Header() {
-  const isLoggedIn = true;
-  const textLinkList = [
+  const isLoggedIn: boolean = true;
+  const textLinkList: Array<{ href: string; text: string }> = [
     { href: "/", text: "Home" },
     { href: "/edit", text: "Edit" },
     { href: "/explore", text: "Explore" },
@@ -28,7 +28,7 @@ export function Header() {
           </div>
         </div>
         <div className="inline-flex items-center">
-          <p className="text-h6 text-[#121417] whitespace-nowrap">DevFolio</p>
+          <p className="text-h6 whitespace-nowrap">DevFolio</p>
         </div>
       </section>
 
@@ -37,9 +37,7 @@ export function Header() {
         <nav className="gap-9 flex h-10 items-center">
           {textLinkList.map(({ href, text }) => (
             <Link key={href} href={href} className="flex h-10 items-center">
-              <p className="text-body-md-medium whitespace-nowrap text-[#121417]">
-                {text}
-              </p>
+              <p className="text-body-md-medium whitespace-nowrap">{text}</p>
             </Link>
           ))}
         </nav>
