@@ -1,10 +1,5 @@
 import Image from "next/image";
-
-interface LinkPreviewProps {
-  imageSrc: string;
-  title: string;
-  description: string;
-}
+import { LinkPreviewProps } from "../types/LinkPreviewProp";
 
 export function LinkPreview({
   imageSrc,
