@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { LinkPreviewProps } from "../types/LinkPreviewProp";
 
+/**
+ * LinkPreview Component
+ * @param imageSrc - The source URL of the image to display
+ * @param title - The title of the link
+ * @param description - A brief description of the link
+ * @returns {JSX.Element}
+ */
+
 export function LinkPreview({
   imageSrc,
   title,
