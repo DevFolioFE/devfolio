@@ -1,14 +1,7 @@
 import { useAuthStore } from "@/shared/store/useAuthStore";
-import {
-  getAuth,
-  GithubAuthProvider,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
-import { doc, getFirestore, setDoc, serverTimestamp } from "firebase/firestore";
-
-const auth = getAuth();
-const db = getFirestore();
+import { GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { db, auth } from "./config";
 
 // GitHub login
 export async function signInWithGitHub() {

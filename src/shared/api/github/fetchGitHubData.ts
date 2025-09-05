@@ -1,8 +1,8 @@
-import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 import axios from "axios";
 
-const db = getFirestore();
-
+// fetch GItHub data
 export async function fetchGitHubData(token: string) {
   const headers = {
     Authorization: `Bearer ${token}`,
@@ -15,7 +15,7 @@ export async function fetchGitHubData(token: string) {
     "https://api.github.com/user/followers",
     { headers },
   );
-
+  console.log("Fetched GitHub data:", { repos, followers });
   return {
     achivements: {
       repos: repos.length,
@@ -41,6 +41,7 @@ export async function fetchGitHubData(token: string) {
   };
 }
 
+// update GitHub data in Firestore
 export async function updateGitHubDataInFirestore(uid: string, token: string) {
   const { achivements, contributionBreakdown } = await fetchGitHubData(token);
 

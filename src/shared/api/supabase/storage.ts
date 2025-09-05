@@ -1,8 +1,8 @@
 import { supabase } from "./client";
 import { doc, setDoc, getFirestore, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase/config";
 
-const db = getFirestore();
-
+// upload supabase return url
 export async function uploadFile(uid: string, file: File) {
   const path = `${uid}/${file.name}`;
   const { error } = await supabase.storage
