@@ -1,5 +1,4 @@
 "use client";
-
 /**
  * Login button component
  * @param text - Display text for the button
