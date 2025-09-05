@@ -3,7 +3,7 @@ import Test_Profile from "@/assets/icons/test_profile.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Login } from "./Login";
+import { Login } from "@/shared/ui/Login";
 
 /**
  * Header component
