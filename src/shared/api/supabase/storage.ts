@@ -1,5 +1,5 @@
 import { supabase } from "./client";
-import { doc, setDoc, getFirestore, serverTimestamp } from "firebase/firestore";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 // upload supabase return url
