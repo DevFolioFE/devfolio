@@ -8,6 +8,7 @@ interface AuthState {
   uid: string | null;
 }
 
+// user authentication store
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
