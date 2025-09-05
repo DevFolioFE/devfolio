@@ -11,8 +11,6 @@ export function Login({ text }: { text?: string }) {
   const handleLogin = async () => {
     const { user, token } = await signInWithGitHub();
     fetchGitHubData(token);
-    console.log("User Info:", user);
-    console.log("Token:", token);
   };
 
   return (

@@ -15,7 +15,6 @@ export async function fetchGitHubData(token: string) {
     "https://api.github.com/user/followers",
     { headers },
   );
-  console.log("Fetched GitHub data:", { repos, followers });
   return {
     achivements: {
       repos: repos.length,
