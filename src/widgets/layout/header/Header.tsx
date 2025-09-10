@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Login } from "@/shared/ui/Login";
+import { useAuthStore } from "@/shared/store/useAuthStore";
 
 /**
  * Header component
@@ -11,7 +12,8 @@ import { Login } from "@/shared/ui/Login";
  */
 
 export function Header() {
-  const isLoggedIn: boolean = true;
+  const { uid } = useAuthStore();
+  const isLoggedIn = !!uid;
   const textLinkList: Array<{ href: string; text: string }> = [
     { href: "/", text: "Home" },
     { href: "/edit", text: "Edit" },

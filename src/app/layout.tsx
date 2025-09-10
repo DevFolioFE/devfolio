@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pretendard } from "./fonts";
 import "./globals.css";
+import { Header } from "@/widgets/layout";
+import { AuthProvider } from "@/shared/hooks";
 
 export const metadata: Metadata = {
   title: "DevFolio",
@@ -14,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pretendard.variable}`}>
-      <body>{children}</body>
+      <body>
+        <AuthProvider>
+          <Header />
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,12 @@
 import { useAuthStore } from "@/shared/store/useAuthStore";
 import { GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  serverTimestamp,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db, auth } from "./config";
 
 // GitHub login
@@ -16,17 +22,27 @@ export async function signInWithGitHub() {
 
   useAuthStore.getState().setAuth(result.user.uid, token);
   const userRef = doc(db, "users", result.user.uid);
-  await setDoc(
-    userRef,
-    {
+  const snapshot = await getDoc(userRef);
+  if (snapshot.exists()) {
+    // existing user, update document
+    await updateDoc(userRef, {
+      email: result.user.email,
+      username: result.user.displayName,
+      photoURL: result.user.photoURL,
+      updatedAt: serverTimestamp(),
+    });
+  } else {
+    //  new user, create document
+    await setDoc(userRef, {
       uid: result.user.uid,
+      username: result.user.displayName,
       photoURL: result.user.photoURL,
       email: result.user.email,
       role: "",
       location: "",
       yearsOfExperience: 0,
       aboutMe: "",
-      skiles: [],
+      skills: [],
       tags: [],
       achievements: {
         repos: 0,
@@ -46,9 +62,8 @@ export async function signInWithGitHub() {
       },
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
-    },
-    { merge: true },
-  );
+    });
+  }
   return { user: result.user, token };
 }
 
