@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "@/assets/icons/logo.svg";
 import Test_Profile from "@/assets/icons/test_profile.svg";
 import Image from "next/image";
@@ -21,7 +23,7 @@ export function Header() {
     { href: "/dashboard", text: "Dashboard" },
   ];
   return (
-    <header className="flex w-full h-[65px] items-center justify-between px-10 py-3 relative border-b [border-bottom-style:solid] border-[var(--color-border)]">
+    <header className="bg-white flex w-full h-[65px] items-center justify-between px-10 py-3 relative border-b [border-bottom-style:solid] border-[var(--color-border)]">
       {/* logo & service name */}
       <section className="inline-flex items-center gap-4 relative flex-[0_0_auto]">
         <div className="inline-flex items-center">
