@@ -8,22 +8,20 @@ interface ButtonProps {
  * @param {Object} props - Button component properties
  * @param {string} props.text - Button text content
  * @param {('blue'|'gray')} props.bgColor - Background color of the button
- * @returns {JSX.Element} A styled button element
+ * @returns {JSX.Element}
  */
 
 export function Button({ text, bgColor = "blue" }: ButtonProps) {
   const bg = {
-    blue: "bg-[var(--color-primary)]",
-    gray: "bg-[#F0F2F5]",
+    blue: "bg-[var(--color-primary)] text-white",
+    gray: "bg-[#F0F2F5] text-[#121417] hover:bg-[var(--color-primary)] hover:text-white",
   };
 
   return (
     <button
-      className={`h-10 px-4 rounded-[8px] flex justify-center items-center ${bg[bgColor]}`}
+      className={`cursor-pointer h-10 px-4 rounded-[8px] flex justify-center items-center ${bg[bgColor]}`}
     >
-      <p
-        className={`text-center justify-start text-body-sm-bold leading-tight ${bgColor === "gray" ? "text-[#121417]" : "text-white"}`}
-      >
+      <p className="text-center justify-start text-body-sm-bold leading-tight">
         {text}
       </p>
     </button>
