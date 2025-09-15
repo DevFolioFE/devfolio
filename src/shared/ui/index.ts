@@ -1,2 +1,3 @@
-export { Login } from "./Login";
-export { Modal } from "./Modal";
+export * from "./Login";
+export * from "./Modal";
+export * from "./TitleBox";

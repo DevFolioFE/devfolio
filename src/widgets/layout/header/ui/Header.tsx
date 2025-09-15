@@ -50,7 +50,7 @@ export function Header() {
         {!isLoggedIn ? (
           <Login text="Login with GitHub" />
         ) : (
-          <Link href="/dashboard">
+          <Link href="/my">
             <Image
               alt="profile"
               src={Test_Profile}

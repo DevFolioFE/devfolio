@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pretendard } from "./fonts";
 import "./globals.css";
-import { Header } from "@/widgets/layout";
+import { Header, PageTransition } from "@/widgets/layout/header/ui";
 import { AuthProvider } from "@/shared/hooks";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <AuthProvider>
           <Header />
-          {children}
+          <PageTransition>{children}</PageTransition>
         </AuthProvider>
       </body>
     </html>

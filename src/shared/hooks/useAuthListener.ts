@@ -1,8 +1,9 @@
-// shared/hooks/useAuthListener.ts
+"use client";
+
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../api";
-import { useAuthStore } from "@/shared/store/useAuthStore";
+import { useAuthStore } from "@/shared/store";
 
 export function useAuthListener() {
   const setAuth = useAuthStore((state) => state.setAuth);
