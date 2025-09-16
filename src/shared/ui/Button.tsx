@@ -13,8 +13,8 @@ interface ButtonProps {
 
 export function Button({ text, bgColor = "blue" }: ButtonProps) {
   const bg = {
-    blue: "bg-[var(--color-primary)] text-white",
-    gray: "bg-[#F0F2F5] text-[#121417] hover:bg-[var(--color-primary)] hover:text-white",
+    blue: "bg-primary text-white",
+    gray: "bg-[#F0F2F5] hover:bg-primary hover:text-white",
   };
 
   return (
