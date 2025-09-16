@@ -1,35 +1,9 @@
 import MainImg from "@/assets/images/MainImg.svg";
-import MyImg from "@/assets/images/MyImg.svg";
-import ExploreImg from "@/assets/images/ExploreImg.svg";
-import DashboardImg from "@/assets/images/DashboardImg.svg";
 import { InfoBlock, LinkPreview } from "@/features/home/ui";
 import { Login, TitleBox } from "@/shared/ui";
+import { PREVIEW_DATA } from "@/features/home/constants/InfoBlockData";
 import { cn } from "@/shared/utils/cn";
 import Image from "next/image";
-
-const PREVIEW_DATA = [
-  {
-    imageSrc: MyImg,
-    title: "Profile Header",
-    description:
-      "Showcase your skills and experience with a customizable profile header.",
-    link: "/my",
-  },
-  {
-    imageSrc: ExploreImg,
-    title: "Project Showcase",
-    description:
-      "Present your projects in a visually appealing card format, highlighting key details and achievements.",
-    link: "/explore",
-  },
-  {
-    imageSrc: DashboardImg,
-    title: "Activity Dashboard",
-    description:
-      "Display your technical skills and proficiencies in an organized manner.",
-    link: "/dashboard",
-  },
-];
 
 export default function Home() {
   return (
