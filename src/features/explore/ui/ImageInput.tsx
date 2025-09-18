@@ -42,9 +42,7 @@ export function ImageInput({
     setTextShow(previewUrls.length === 0);
   }, [previewUrls.length]);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(event.target.files || []);
-
+  const processFiles = (files: File[]) => {
     const totalFiles = previewUrls.length + files.length;
 
     if (totalFiles > maxImages) {
@@ -59,13 +57,38 @@ export function ImageInput({
     });
   };
 
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    processFiles(files);
+  };
+
   const handleButtonClick = () => {
     fileInputRef.current?.click();
   };
 
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const files = Array.from(e.dataTransfer.files).filter((file) =>
+      file.type.startsWith("image/"),
+    );
+
+    processFiles(files);
+  };
+
   return (
     <div className="w-full p-4 flex flex-col">
-      <div className="py-14 rounded-lg outline-dashed outline-offset-[-2px] outline-[#DBE0E5] flex flex-col justify-center items-center gap-6">
+      <div
+        className="py-14 rounded-lg outline-dashed outline-offset-[-2px] outline-[#DBE0E5] flex flex-col justify-center items-center gap-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50"
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+      >
         <p className={`text-h6 font-bold ${textShow ? "" : "hidden"}`}>
           {title}
         </p>
