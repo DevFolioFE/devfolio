@@ -89,9 +89,7 @@ export function ImageInput({
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >
-        <p className={`text-h6 font-bold ${textShow ? "" : "hidden"}`}>
-          {title}
-        </p>
+        <p className={`text-h6 ${textShow ? "" : "hidden"}`}>{title}</p>
         <p className={`text-body-md-regular ${textShow ? "" : "hidden"}`}>
           {subTitle}
         </p>
