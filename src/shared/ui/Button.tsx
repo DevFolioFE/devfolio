@@ -24,7 +24,7 @@ export function Button({ text, bgColor = "blue", onClick }: ButtonProps) {
       className={`cursor-pointer h-10 px-4 rounded-[8px] flex justify-center items-center ${bg[bgColor]}`}
       onClick={onClick}
     >
-      <p className="text-center justify-start text-body-sm-bold leading-tight">
+      <p className="text-center justify-start text-body-md-bold leading-tight">
         {text}
       </p>
     </button>
