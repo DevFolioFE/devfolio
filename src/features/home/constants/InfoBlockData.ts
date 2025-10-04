@@ -1,5 +1,5 @@
 import GithubSvg from "@/assets/icons/github.svg";
-import CodeSvg from "@/assets/icons/code.svg";
+import VisualSvg from "@/assets/icons/visual.svg";
 import PersonSvg from "@/assets/icons/person.svg";
 import ClockSvg from "@/assets/icons/clock.svg";
 import DocumentSvg from "@/assets/icons/document.svg";
@@ -16,7 +16,7 @@ export const AList: Array<{ icon: string; title: string; content: string }> = [
       "Import GitHub repositories automatically, keeping your portfolio up-to-date with your latest projects.",
   },
   {
-    icon: CodeSvg,
+    icon: VisualSvg,
     title: "Visual UI",
     content:
       "Behance-style project cards and a modern design that highlights your projects in a visually appealing way.",
